@@ -5,16 +5,16 @@ import java.util.List;
 
 public class Element {
 
-	private List<String> contenu;
-	private int indice;
+	protected List<String> contenu;
+	protected int indice;
 	
-	public Element(ArrayList<String> contenu) {
+	public Element(List<String> contenu) {
 		this.contenu = contenu;
 		indice = 0;
 	}
 	
 	public boolean estVide() {
-		return indice == contenu.size();
+		return indice >= contenu.size();
 	}
 	
 	public void passeALaSuite() {
@@ -22,9 +22,18 @@ public class Element {
 	}
 	
 	public String elementCourant() {
-		if(this.estVide()) return null;
+		if(this.estVide())
+			return null;
 		return contenu.get(indice);
 	}
+	
+	public String premier() {
+		return contenu.get(0);
+	}
+	
+	
+	
+	
 	
 	
 	
